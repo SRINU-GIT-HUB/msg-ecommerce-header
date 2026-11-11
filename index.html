@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Store Header</title>
+    <meta name="description" content="A clean, responsive e-commerce header with cart and search.">
+    <meta name="author" content="MetaSkillGroup">
+    
+    <!-- 1. Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- 2. Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- 3. Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ANNOUNCEMENT BAR -->
+    <div id="announcement-bar" class="announcement-bar">
+        <div id="announcement-text" class="announcement-text" aria-live="polite">
+            <!-- Text goes here via JavaScript -->
+        </div>
+        <button id="close-bar" class="close-bar" aria-label="Close message">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    </div>
+
+    <!-- MAIN HEADER ROW -->
+    <header class="main-header">
+        <div class="container header-content">
+            
+            <!-- Logo -->
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 40 40" fill="none">
+                    <rect width="40" height="40" rx="8" fill="var(--brand-color)"/>
+                    <path d="M10 20 h20 M20 10 v20" stroke="white" stroke-width="4" stroke-linecap="round"/>
+                </svg>
+                <span>Store</span>
+            </a>
+
+            <!-- Search Form -->
+            <form id="search-form" class="search-form" role="search">
+                <select id="search-category" aria-label="Category">
+                    <option value="all">All</option>
+                    <option value="tech">Tech</option>
+                    <option value="fashion">Fashion</option>
+                </select>
+                <input type="text" id="search-input" placeholder="Search products..." aria-label="Search">
+                <button type="submit" class="search-btn" aria-label="Submit search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </form>
+
+            <!-- Icons (Account, Wishlist, Cart) -->
+            <div class="icon-group">
+                <a href="#" class="icon-btn" aria-label="Account">
+                    <i class="fa-regular fa-user"></i>
+                </a>
+                <a href="#" class="icon-btn" aria-label="Wishlist">
+                    <i class="fa-regular fa-heart"></i>
+                    <span class="badge" id="wishlist-badge">0</span>
+                </a>
+                <button id="cart-btn" class="icon-btn" aria-expanded="false" aria-controls="mini-cart" aria-label="Cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="badge brand-badge" id="cart-badge">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- CATEGORY STRIP -->
+    <nav class="category-strip" aria-label="Main Navigation">
+        <div class="container category-container">
+            <ul id="main-menu" class="menu-list">
+                <li><a href="#">Electronics</a></li>
+                <li><a href="#">Fashion</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Beauty</a></li>
+                <li><a href="#">Sports</a></li>
+                <li><a href="#">Toys</a></li>
+                <li><a href="#">Groceries</a></li>
+                <li><a href="#">Books</a></li>
+            </ul>
+
+            <!-- Dropdown for overflow items -->
+            <div id="more-dropdown" class="more-dropdown">
+                <button class="more-btn" aria-haspopup="true">More <i class="fa-solid fa-caret-down"></i></button>
+                <ul id="more-menu" class="more-menu-list">
+                    <!-- Javascript moves extra items here -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- DARK OVERLAY FOR CART -->
+    <div id="overlay" class="overlay"></div>
+
+    <!-- MINI CART DRAWER -->
+    <aside id="mini-cart" class="mini-cart" role="dialog" aria-labelledby="cart-title" inert>
+        <div class="cart-header">
+            <h2 id="cart-title">Shopping Cart</h2>
+            <button id="close-cart" class="close-cart-btn" aria-label="Close cart">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        
+        <div id="cart-items-container" class="cart-items">
+            <!-- Items appear here via JavaScript -->
+        </div>
+
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Subtotal:</span>
+                <strong id="cart-subtotal">₹0.00</strong>
+            </div>
+            <div class="cart-buttons">
+                <a href="#" class="btn btn-light">View Cart</a>
+                <a href="#" class="btn btn-dark">Checkout</a>
+            </div>
+        </div>
+    </aside>
+
+    <script src="script.js"></script>
+</body>
+</html>
